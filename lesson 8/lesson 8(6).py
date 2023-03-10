@@ -5,12 +5,10 @@ def guess_number():
     target = random.randint(1, 10)
 
     for i in range(3):
-        guess = int(input("Введите число от 1 до 10: "))
-
         try:
+            guess = int(input("Введите число от 1 до 10: "))
             if guess < 1 or guess > 10:
-                raise ValueError("Ошибка! Вы ввели не число")
-
+                print("Введите число от 1 до 10")
             if guess == target:
                 print("Ты победил!")
                 return
@@ -19,7 +17,7 @@ def guess_number():
             else:
                 print("Ваше число больше.")
         except ValueError:
-            print('Ошибка! Введите число от 1 до 10.')
+            print("Ошибка вы ввели не число")
 
     print("Удача не на твоей стороне, попробуй ещё!")
 
