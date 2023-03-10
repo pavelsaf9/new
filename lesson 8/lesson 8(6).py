@@ -3,15 +3,14 @@ import random
 
 def guess_number():
     target = random.randint(1, 10)
-    print("Я загадал число от 1 до 10. У тебя есть 3 попытки, чтобы угадать его.")
 
     for i in range(3):
-        guess = input("Попробуй угадать число: ")
+        guess = input("Введите число от 1 до 10: ")
 
         try:
             guess = int(guess)
             if guess < 1 or guess > 10:
-                raise ValueError("Ошибка! Введите число от 1 до 10.")
+                raise ValueError("Ошибка! Вы ввели не число")
 
             if guess == target:
                 print("Ты победил!")
@@ -20,8 +19,8 @@ def guess_number():
                 print("Ваше число меньше.")
             else:
                 print("Ваше число больше.")
-        except ValueError as e:
-            print(e)
+        except ValueError:
+            print('Ошибка! Введите число от 1 до 10.')
 
     print("Удача не на твоей стороне, попробуй ещё!")
 
